@@ -1,0 +1,41 @@
+#ifndef INC_VERSION_H
+#define INC_VERSION_H
+
+#include <bool.h>
+
+/**
+\unit
+    !Version information.
+*/
+
+#define VER_HIERARCHIE_MAJOR                              /**<major version.*/
+#define VER_HIERARCHIE_MINOR                              /**<minor version.*/
+#define VER_HIERARCHIE_MICRO                              /**<micro version.*/
+
+/**
+    Handle to versison information.
+*/
+typedef struct _version_info_t *P_APP_VERSION;
+
+/**
+    Describes current version.
+*/
+typedef struct _version_info_t {
+    int nMajor;                                         /**<Major value from 0-99.*/
+    int nMinor;                                         /**<Minor value from 0-99.*/
+    int nMicro;                                         /**<Micro value from 0-99.*/
+} APP_VERSION;
+
+/*
+    Public interface.
+*/
+///DOXYS_OFF
+void Version();
+const char *InternalVersion (char *, int);
+void Copyright();
+void setQuietMode (BOOL);
+BOOL getQuietMode ();
+///DOXYS_ON
+
+#endif
+
